@@ -1,0 +1,9 @@
+google-play-scraper
+pandas
+numpy
+matplotlib
+seaborn
+transformers
+torch
+sentencepiece
+streamlit

@@ -1,0 +1,13 @@
+=======================================================
+SENTIMENT REPORT
+-------------------------------------------------------
+   positive  : 14924 (74.6%)
+   negative  : 2939 (14.7%)
+   neutral   : 2137 (10.7%)
+Star-vs-text agreement (excl. 3-star): 85.4%
+Mismatch breakdown:
+   high_rating_negative_text      : 647
+   neutral_rating_negative_text   : 204
+   low_rating_positive_text       : 181
+NOTE: mismatches show where tone and stars differ, not causation.
+=======================================================

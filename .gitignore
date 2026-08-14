@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Streamlit local secrets (never commit secrets)
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep processed data + outputs committed so the deployed dashboard works
+# (Streamlit Cloud can't run the 1GB sentiment model). Nothing excluded there.

@@ -1,0 +1,36 @@
+EXECUTIVE SUMMARY - Product Prioritization
+============================================================
+App overall: avg rating 4.37/5, 14.7% negative (text).
+Analyzed 6 real issue clusters (2 noise/language clusters excluded).
+
+BIGGEST PROBLEMS (by reach):
+  - App Update Complaints: 228 reviews, avg 2.39, 1-star 48.7%.
+  - Customer Support: 223 reviews, avg 1.27, 1-star 86.5%.
+  - Charts / App Not Working: 213 reviews, avg 1.93, 1-star 59.2%.
+
+ADDRESS FIRST (by transparent priority score):
+  [P0 - Critical] Customer Support (score 77.2) - 223 reviews, avg 1.27, 1-star 86.5%, trend: Stable.
+  [P0 - Critical] Charts / App Not Working (score 72.5) - 213 reviews, avg 1.93, 1-star 59.2%, trend: Increasing.
+  [P2 - Medium] High Brokerage / Charges (score 45.2) - 204 reviews, avg 1.97, 1-star 59.3%, trend: Stable.
+  [P2 - Medium] App Update Complaints (score 45.0) - 228 reviews, avg 2.39, 1-star 48.7%, trend: Stable.
+  [P2 - Medium] Severe Dissatisfaction ('worst app') (score 44.7) - 138 reviews, avg 1.16, 1-star 94.2%, trend: Stable.
+
+GETTING WORSE RECENTLY:
+  Charts / App Not Working
+
+VERSION-CONCENTRATED ISSUES (association, not causation):
+  None showed strong single-version concentration.
+
+INVESTIGATE FIRST:
+  Customer Support - Investigate the 'Customer Support' user journey (reviews cluster on: customer, service, support, customer support). Treat as a hypothesis to validate, not a confirmed root cause.
+
+(SQL vs Pandas consistency: CONSISTENT, max diff 0.0000)
+
+LIMITATIONS
+------------------------------------------------------------
+- Play Store reviews are self-selected feedback, not all users.
+- Complaint frequency != actual incidence rate of the problem.
+- Sentiment model and topic clusters can be wrong or noisy.
+- Version association does not prove causation.
+- Recommendations are hypotheses requiring product validation.
+- Review text cannot reveal technical root causes directly.

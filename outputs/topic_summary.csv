@@ -1,0 +1,9 @@
+cluster_id,topic_name,is_noise,review_count,negative_percentage,one_star_percentage,two_star_percentage,average_rating,average_sentiment,dominant_sentiment,top_keywords,representative_review,priority_score
+2,"General / Mixed (noisy, other-language)",True,1539,53.8,66.3,10.9,1.83,0.711,negative,"app, groww, money, don, trading, loss, option, account",so buti full,0.5935
+5,Severe Dissatisfaction ('worst app'),False,138,4.8,94.2,2.2,1.16,0.904,negative,"worst, app, worst app, trading, worst experience, experience, worst trading, trading app",Worst app i can't even widdraw my amount,0.5069
+6,Customer Support,False,223,7.8,86.5,6.3,1.27,0.877,negative,"customer, service, support, customer support, poor, customer care, care, customer service",Boot App 0% Best Customer Support Service,0.4681
+4,Generic Negative Experience,False,105,3.7,83.8,8.6,1.36,0.893,negative,"bad, bad experience, experience, bad app, app, money, withdrawal, service",veryyyy bad appp,0.4038
+3,"Hinglish Reviews (language, not an issue)",True,212,7.4,59.4,5.7,2.32,0.457,negative,"hai, bahut, app, app hai, ho, ka, se, hi",mast hai ji,0.3043
+0,High Brokerage / Charges,False,204,7.1,59.3,13.7,1.97,0.709,negative,"charges, high, charges high, brokerage, brokerage charges, high brokerage, charge, hidden",very High and exorbitant charges,0.2461
+7,Charts / App Not Working,False,213,7.4,59.2,13.6,1.93,0.765,negative,"time, working, chart, app, properly, working properly, app working, open",chart is not working smoothly,0.2288
+1,App Update Complaints,False,228,8.0,48.7,11.0,2.39,0.741,negative,"good, update, new, app, new update, version, like, previous",new update is not Good,0.0987

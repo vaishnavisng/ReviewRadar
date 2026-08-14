@@ -1,0 +1,37 @@
+VERSION & TIME-SERIES REPORT
+============================================================
+
+VALIDATION CHECKS
+------------------------------------------------------------
+  source_reviews                  : 20000
+  reviews_with_version            : 18478
+  missing_version                 : 1522
+  missing_dates                   : 0
+  unique_versions                 : 138
+  versions_in_impact_table        : 138
+  stable_versions(>=30)           : 20
+  sql_vs_pandas_avg_rating        : CONSISTENT (max diff 0.0100)
+
+INSIGHTS (data-backed)
+------------------------------------------------------------
+  1. Version 18.14.2 had the highest negative share at 19.3% (avg rating 4.2, 1-star 14.7%) vs the overall 14.7% negative and 4.37 avg rating.
+  2. Best-received stable version was 18.3.1 at 4.67 avg rating (8.2% negative).
+  3. Versions with unusually high negative feedback (z>1 vs the cross-version mean of 13.0%): 18.14.2 (z=1.88), 18.7.1 (z=1.7), 18.5.0 (z=1.1).
+  4. 'General / Mixed (noisy, other-language)' was the most concentrated issue in a single version: 72.7% of version 18.1.1's clustered reviews (association, not causation).
+
+BEFORE / AFTER highest-volume version appears (PROXY, confounded)
+------------------------------------------------------------
+  version 18.11.1 first seen 2026-06-09
+  before: n=10169, avg=4.28, neg=16.8%
+  after : n=9831, avg=4.46, neg=12.5%
+  NOTE: split reflects overall time trend too, not the version alone.
+
+LIMITATIONS
+------------------------------------------------------------
+  - Not every review carries an app version (missing values excluded from version stats).
+  - reviewCreatedVersion is the reviewer's version, NOT the official release date.
+  - Review timing may not match the update date; we use first-seen-in-data as a proxy only.
+  - Reviews are self-selected - unhappy users often over-represented.
+  - Version/complaint correlation does NOT prove the version caused the complaint.
+  - Versions with few reviews give unstable percentages (we require >= 30 for stable comparisons).
+  - Before/after split is confounded by the app's overall time trend.

@@ -1,0 +1,113 @@
+TOPIC VALIDATION
+============================================================
+K = 8 clusters. For each: keywords, size, sample reviews,
+and a quick coherence note (needs human judgement).
+
+[Cluster 2] General / Mixed (noisy, other-language)  (n=1539, 1-star=66.3%, avg=1.83)
+  keywords: app, groww, money, don, trading, loss, option, account
+  representative reviews:
+    - so buti full
+    - so much lagg
+    - tf fg gy yu ರ
+    - বন্ধ করে দিন
+    - কোন গতে ডিলিট হচ্ছে না
+  coherence: review keywords above -- coherent if they point to ONE theme; broad/noisy if they mix unrelated complaints.
+
+[Cluster 1] App Update Complaints  (n=228, 1-star=48.7%, avg=2.39)
+  keywords: good, update, new, app, new update, version, like, previous
+  representative reviews:
+    - new update is not Good
+    - I want an old update one.. this new update not good
+    - very good 👍
+    - not good for me
+    - good but risky
+  coherence: review keywords above -- coherent if they point to ONE theme; broad/noisy if they mix unrelated complaints.
+
+[Cluster 6] Customer Support  (n=223, 1-star=86.5%, avg=1.27)
+  keywords: customer, service, support, customer support, poor, customer care, care, customer service
+  representative reviews:
+    - Boot App 0% Best Customer Support Service
+    - customer support is very poor
+    - rubbish customer support
+    - customer care service is still poor
+    - bad customer service
+  coherence: review keywords above -- coherent if they point to ONE theme; broad/noisy if they mix unrelated complaints.
+
+[Cluster 7] Charts / App Not Working  (n=213, 1-star=59.2%, avg=1.93)
+  keywords: time, working, chart, app, properly, working properly, app working, open
+  representative reviews:
+    - chart is not working smoothly
+    - Chart indicaters not working
+    - groww tradingview chart not working
+    - app not working properly at the time of market opening..
+    - chart problem closing candle time not reflect time to time.
+  coherence: review keywords above -- coherent if they point to ONE theme; broad/noisy if they mix unrelated complaints.
+
+[Cluster 3] Hinglish Reviews (language, not an issue)  (n=212, 1-star=59.4%, avg=2.32)
+  keywords: hai, bahut, app, app hai, ho, ka, se, hi
+  representative reviews:
+    - mast hai ji
+    - mast એપ્લિકેશન hai
+    - sutiya hai app
+    - adverties bahut dete hai bhukhad
+    - bahut ghatiya hai brockrage charge bahut leta hai pura fayda yahi le jata hai chhote traders mat install karna 5000 se kam wale ke liye nahi hai ye aap aur mujhe lagta hai price ye khud hi kam jyada k
+  coherence: review keywords above -- coherent if they point to ONE theme; broad/noisy if they mix unrelated complaints.
+
+[Cluster 0] High Brokerage / Charges  (n=204, 1-star=59.3%, avg=1.97)
+  keywords: charges, high, charges high, brokerage, brokerage charges, high brokerage, charge, hidden
+  representative reviews:
+    - very High and exorbitant charges
+    - charges are increased too high, more than others
+    - brokerage charges too high😭
+    - Brokerage charges are high.
+    - brokerage charges very high
+  coherence: review keywords above -- coherent if they point to ONE theme; broad/noisy if they mix unrelated complaints.
+
+[Cluster 5] Severe Dissatisfaction ('worst app')  (n=138, 1-star=94.2%, avg=1.16)
+  keywords: worst, app, worst app, trading, worst experience, experience, worst trading, trading app
+  representative reviews:
+    - Worst app i can't even widdraw my amount
+    - worst app in the world
+    - One of the worst app
+    - worst app ever
+    - one of the worst app
+  coherence: review keywords above -- coherent if they point to ONE theme; broad/noisy if they mix unrelated complaints.
+
+[Cluster 4] Generic Negative Experience  (n=105, 1-star=83.8%, avg=1.36)
+  keywords: bad, bad experience, experience, bad app, app, money, withdrawal, service
+  representative reviews:
+    - veryyyy bad appp
+    - very bad 👎🏿 👎🏿
+    - very 😞😔 bad
+    - very bad signal
+    - very bad 😞😞
+  coherence: review keywords above -- coherent if they point to ONE theme; broad/noisy if they mix unrelated complaints.
+
+
+============================================================
+LIMITATIONS OF TF-IDF + K-MEANS
+------------------------------------------------------------
+- TF-IDF relies on word OVERLAP, not meaning: two reviews about the same
+  problem in different words can land in different clusters.
+- Synonyms/paraphrases ('cant login' vs 'unable to sign in') may split.
+- Hinglish / multilingual reviews cluster partly by LANGUAGE, not issue
+  (see any 'hai/bahut/nahi' style cluster) -- reduces quality.
+- Sarcasm and context are invisible to a bag-of-words model.
+- K-Means assumes round, similar-sized clusters; real issues aren't.
+- Low silhouette scores here mean clusters overlap: treat topics as
+  DIRECTIONAL, and always human-validate before acting.
+
+============================================================
+WHY TOPIC FREQUENCY ALONE SHOULD NOT SET PRIORITY
+------------------------------------------------------------
+A 3,000-review topic can be LESS urgent than an 800-review topic if the
+smaller one has much higher 1-star concentration, a much lower average
+rating, stronger negative sentiment, or is growing fast. Frequency = how
+many; severity = how badly. Our priority_score blends volume (0.30),
+1-star % (0.30), low rating (0.20) and negative tone (0.20) for this reason.
+
+============================================================
+NO CAUSAL CLAIMS
+------------------------------------------------------------
+We describe correlation only. Say 'authentication complaints rose around
+the period of version X', NOT 'version X caused authentication problems'.
