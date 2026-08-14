@@ -1,0 +1,13 @@
+# Full dependencies to run the OFFLINE pipeline
+# (scraper -> cleaner -> sentiment -> topics -> version_analysis -> prioritization).
+# The deployed dashboard does NOT need these; see requirements.txt for that.
+google-play-scraper
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+transformers
+torch
+sentencepiece
+streamlit

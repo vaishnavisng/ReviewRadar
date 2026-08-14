@@ -31,8 +31,11 @@ Notebook `notebooks/01_eda.ipynb` holds the exploratory analysis.
 ## Setup
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-pipeline.txt   # full deps to run the pipeline locally
 ```
+
+`requirements.txt` is intentionally slim (streamlit + pandas + matplotlib + seaborn) —
+it is what the **deployed dashboard** installs, since the dashboard runs no ML.
 
 ## Run the full pipeline
 

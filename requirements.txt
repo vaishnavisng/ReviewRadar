@@ -1,9 +1,7 @@
-google-play-scraper
+# Runtime deps for the DEPLOYED dashboard only (Streamlit Cloud reads this file).
+# The dashboard reads pre-computed CSVs/SQLite and runs NO ML, so it stays light.
+# To run the full offline pipeline, install requirements-pipeline.txt instead.
+streamlit
 pandas
-numpy
 matplotlib
 seaborn
-transformers
-torch
-sentencepiece
-streamlit
