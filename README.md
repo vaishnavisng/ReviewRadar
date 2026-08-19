@@ -70,8 +70,8 @@ views live — no model ever re-runs.
 `version_issue_analysis.csv`, `product_priorities.csv`, and `reviewradar.db`
 (for the SQL metrics). It reads results only.
 
-### Why heavy NLP/ML runs *before* the dashboard
-Sentiment (Transformers), TF-IDF, and K-Means take minutes and load large models.
+### Why heavy ML runs *before* the dashboard
+ TF-IDF, and K-Means take minutes and load large models.
 Running them inside Streamlit would make every click slow. So all heavy analysis
 is done once in the pipeline and saved to CSV/SQLite; the dashboard just reads
 those results and stays instant.
